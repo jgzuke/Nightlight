@@ -122,22 +122,21 @@ containing a value of this type.
         public static final int sprite_check=0x7f020011;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0011;
+        public static final int action_settings=0x7f0a0010;
         public static final int blue=0x7f0a0005;
-        public static final int brightness=0x7f0a0001;
+        public static final int brightness=0x7f0a0000;
         public static final int button_accept=0x7f0a000a;
         public static final int button_cancel=0x7f0a0009;
-        public static final int buttonflat=0x7f0a000e;
-        public static final int color=0x7f0a0000;
+        public static final int buttonflat=0x7f0a000d;
+        public static final int color=0x7f0a0001;
         public static final int contentDialog=0x7f0a0006;
         public static final int green=0x7f0a0004;
         public static final int message=0x7f0a0008;
         public static final int number_indicator_spinner_content=0x7f0a000b;
         public static final int red=0x7f0a0003;
-        public static final int shape_bacground=0x7f0a0010;
-        public static final int slider=0x7f0a000c;
-        public static final int snackbar=0x7f0a000d;
-        public static final int text=0x7f0a000f;
+        public static final int shape_bacground=0x7f0a000f;
+        public static final int snackbar=0x7f0a000c;
+        public static final int text=0x7f0a000e;
         public static final int title=0x7f0a0007;
         public static final int viewColor=0x7f0a0002;
     }
@@ -146,9 +145,8 @@ containing a value of this type.
         public static final int color_selector=0x7f030001;
         public static final int dialog=0x7f030002;
         public static final int number_indicator_spinner=0x7f030003;
-        public static final int slidebar=0x7f030004;
-        public static final int snackbar=0x7f030005;
-        public static final int text=0x7f030006;
+        public static final int snackbar=0x7f030004;
+        public static final int text=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f090000;

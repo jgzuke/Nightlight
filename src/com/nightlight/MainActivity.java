@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -21,6 +22,7 @@ import android.view.View.OnClickListener;
 public class MainActivity extends Activity {
 
 	Context context;
+	private int backColor = Color.WHITE;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,12 +35,13 @@ public class MainActivity extends Activity {
 	    	@Override
 	    	public void onClick(View v)
 			{
-				ColorSelector colorSelector = new ColorSelector(context, Color.WHITE,
+	    		ColorSelector colorSelector = new ColorSelector(context, backColor,
 						new OnColorSelectedListener()
 					    {
 							@Override
 							public void onColorSelected(int color)
 							{
+								backColor = color;
 								getWindow().getDecorView().setBackgroundColor(color);
 							}
 					    });
@@ -46,18 +49,7 @@ public class MainActivity extends Activity {
 					    colorSelector.show();
 			}
 		});
-	    findViewById(R.id.brightness).setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(final View flatButton)
-			{
-				AlertDialog.Builder builder = new AlertDialog.Builder(context);
-				LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-				Slider bar = (Slider) layoutInflater.inflate(R.layout.slidebar, null, false);
-				WindowManager.LayoutParams lp = getWindow().getAttributes();
-			    lp.screenBrightness = 0;
-			    getWindow().setAttributes(lp);
-				bar.setOnValueChangedListener(new OnValueChangedListener()
+	    ((Slider)findViewById(R.id.brightness)).setOnValueChangedListener(new OnValueChangedListener()
 				{
 					@Override
 					public void onValueChanged(int value)
@@ -67,9 +59,6 @@ public class MainActivity extends Activity {
 					    getWindow().setAttributes(lp);
 					}
 				});
-				builder.setView(bar).setTitle("Brightness").create().show();
-			}
-		});
 	}
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
