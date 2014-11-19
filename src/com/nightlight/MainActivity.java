@@ -22,7 +22,7 @@ import android.view.View.OnClickListener;
 public class MainActivity extends Activity {
 
 	Context context;
-	private int backColor = Color.WHITE;
+	private int backColor = Color.RED;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +31,10 @@ public class MainActivity extends Activity {
 		getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
 	    getActionBar().hide();
 	    setContentView(R.layout.activity_main);
+	    WindowManager.LayoutParams lp = getWindow().getAttributes();
+	    lp.screenBrightness = 0 / 100.0f;
+	    getWindow().setAttributes(lp);
+	    getWindow().getDecorView().setBackgroundColor(backColor);
 	    findViewById(R.id.color).setOnClickListener(new OnClickListener() {
 	    	@Override
 	    	public void onClick(View v)
